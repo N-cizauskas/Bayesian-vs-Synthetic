@@ -67,8 +67,8 @@ Torrelo2023 <- data.frame(
 
 
 # for paller 2023:
-n <- 6
-responders <- 94
+n <- 94
+responders <- 6
 
 response <- c(rep(1, responders), rep(0, n - responders))
 response <- sample(response)  # randomise across rows
@@ -288,3 +288,4 @@ ggplot(study_data, aes(x = response_rate, y = study)) +
             axis.line = element_line(color = "black") 
           )
 dev.off()
+
