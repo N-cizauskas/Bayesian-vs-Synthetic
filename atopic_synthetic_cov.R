@@ -6,6 +6,13 @@ library(ggplot2)
 n <- 79
 responders <- 28
 
+# covariate additions
+sex_female <- 24
+sex_male <- 55
+age_under_2 <- 5
+age_over_2 <- 74
+
+
 response <- c(rep(1, responders), rep(0, n - responders))
 response <- sample(response)  # randomise across rows
 
@@ -18,6 +25,12 @@ Paller2022 <- data.frame(
 # for simpson 2020:
 n <- 85
 responders <- 7
+
+# covariate additions
+sex_female <- 32
+sex_male <- 53
+age_under_2 <- 0
+age_over_2 <- 85
 
 response <- c(rep(1, responders), rep(0, n - responders))
 response <- sample(response)  # randomise across rows
@@ -32,6 +45,13 @@ Simpson2020 <- data.frame(
 n <-  123
 responders <- 33
 
+
+# covariate additions
+sex_female <- 62
+sex_male <- 61
+age_under_2 <- 0
+age_over_2 <- 123
+
 response <- c(rep(1, responders), rep(0, n - responders))
 response <- sample(response)  # randomise across rows
 
@@ -43,6 +63,12 @@ Paller2020 <- data.frame(
 # for ebisawa 2024:
 n <- 32
 responders <- 6
+
+# covariate additions
+sex_female <- 13
+sex_male <- 21
+age_under_2 <- 0
+age_over_2 <- 32
 
 response <- c(rep(1, responders), rep(0, n - responders))
 response <- sample(response)  # randomise across rows
@@ -57,6 +83,12 @@ Ebisawa2024 <- data.frame(
 n <- 122
 responders <- 39
 
+# covariate additions
+sex_female <- 64
+sex_male <- 58
+age_under_2 <- 0
+age_over_2 <- 122
+
 response <- c(rep(1, responders), rep(0, n - responders))
 response <- sample(response)  # randomise across rows
 
@@ -69,6 +101,13 @@ Torrelo2023 <- data.frame(
 # for paller 2023:
 n <- 94
 responders <- 6
+
+# covariate additions
+sex_female <- 43
+sex_male <- 51
+age_under_2 <- 0
+age_over_2 <- 94
+
 
 response <- c(rep(1, responders), rep(0, n - responders))
 response <- sample(response)  # randomise across rows
@@ -299,11 +338,11 @@ ggplot(study_data, aes(x = response_rate, y = study)) +
     x = "Response Rate (95% CI)",
     y = "Study"
   ) +
-  xlimS(c(0.0, 0.8))+
+  xlim(c(0.0, 0.8))+
   theme_minimal() +
 
-          theme(
-            panel.grid = element_blank(),
-            axis.line = element_line(color = "black")
-          )
+  theme(
+    panel.grid = element_blank(),
+    axis.line = element_line(color = "black")
+  )
 dev.off()
